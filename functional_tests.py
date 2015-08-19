@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 import unittest
 
 
@@ -19,13 +20,15 @@ class NewVisitorTest(unittest.TestCase):
 		# They notice the page title and header mention
 		# a pastry in a parks
 		self.assertIn('Pastry in a Park', self.browser.title)
-		self.fail('Finish test')
+
 
 		# They see a map
+		self.browser.find_element_by_id('pastry_map')
+
 
 		# And above the map, they are invited to enter a
 		# location to begin their pastry and park search
-
+		self.fail('Finish test')
 		# They enter their desired location
 
 		# And the page updates the map with their search

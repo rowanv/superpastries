@@ -16,7 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+admin.autodiscover()
 urlpatterns = [
     #url(r'^admin/', include(admin.site.urls)),
-     url(r'^$', 'pastries.views.home_page', name='home'),
+    url(r'^$', 'pastries.views.home_page', name='home'),
 ]

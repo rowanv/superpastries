@@ -1,6 +1,37 @@
 from selenium import webdriver
+import unittest
 
-browser = webdriver.Firefox()
-browser.get('http://localhost:8000')
 
-assert 'Django' in browser.title
+
+class NewVisitorTest(unittest.TestCase):
+
+	def setUp(self):
+		self.browser = webdriver.Firefox()
+
+	def tearDown(self):
+		self.browser.quit()
+
+	def test_can_search_for_a_p_and_p_location(self):
+		# Marco has heard about a cool new app for finding
+		# pastries in parks.
+		self.browser.get('http://localhost:8000')
+
+		# They notice the page title and header mention
+		# a pastry in a parks
+		self.assertIn('Pastry in a Park', self.browser.title)
+		self.fail('Finish test')
+
+		# They see a map
+
+		# And above the map, they are invited to enter a
+		# location to begin their pastry and park search
+
+		# They enter their desired location
+
+		# And the page updates the map with their search
+		# results.
+
+		# Satisfied, they go back to sleep.
+
+if __name__ == '__main__':
+	unittest.main()

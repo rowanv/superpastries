@@ -19,3 +19,10 @@ class HomePageTest(TestCase):
 
 	def test_map(self):
 		pass
+
+	def test_saving_a_post_request(self):
+		pass
+
+
+
+
